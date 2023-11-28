@@ -105,6 +105,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox")},
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("/bin/sh /home/larse/Scripts/bin/screenshooter.sh")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
