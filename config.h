@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const int startwithgaps[]    = { 1 };	/* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]   = { 20 };   /* default gap between windows in pixels, this can be customized for each tag */
-static const unsigned int snap      = 20;       /* snap pixel */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int gappx[]   = { 16 };   /* default gap between windows in pixels, this can be customized for each tag */
+static const unsigned int snap      = 5;       /* snap pixel */
+static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 3;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
@@ -69,6 +69,8 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+#define STATUSBAR "dwmblocks"
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
@@ -125,7 +127,9 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
+        { ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
+        { ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
