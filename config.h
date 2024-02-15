@@ -1,9 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int startwithgaps[]    = { 1 };	/* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]   = { 16 };   /* default gap between windows in pixels, this can be customized for each tag */
+static const unsigned int gappx[]   = { 10 };   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 5;       /* snap pixel */
 static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corner, >0: systray on left of status text */
@@ -21,8 +21,8 @@ static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#F1541F";
-static char selbgcolor[]            = "#F1541F";
+static char selbordercolor[]        = "#de0000";
+static char selbgcolor[]            = "#1693c4";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -107,7 +107,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox")},
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("/bin/sh /home/larse/Scripts/bin/screenshooter.sh")},
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("screenshooter.sh")},
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("dm-tool lock")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
