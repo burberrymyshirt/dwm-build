@@ -103,9 +103,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
-	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = +5 } },
+	/*{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },*/
+	/*{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },*/
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox")},
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("screenshooter.sh")},
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("dm-tool lock")},
