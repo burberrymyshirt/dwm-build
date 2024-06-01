@@ -15,8 +15,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
 static const int user_bh            = 0;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "jetbrainsmono:size=12" };
-static const char dmenufont[]       = "jetbrainsmono:size=12";
+static const char *fonts[]          = { "LektonNerdFontMono:size=16" };
+static const char dmenufont[]       = "LektonNerdFontMono:size=16";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
