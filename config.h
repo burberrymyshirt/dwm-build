@@ -81,6 +81,11 @@ static const char *mednextcmd[] = { "playerctl", "next", NULL };
 static const char *medprevcmd[] = { "playerctl", "previous", NULL };
 
 #include <X11/XF86keysym.h>
+#include <X11/keysym.h>
+#include <X11/Xlocale.h>
+// XK_aring for å
+// XK_ae for æ
+// XK_oslash for ø
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
@@ -120,6 +125,9 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		spawn,		{.v = (const char*[]){ "mpc", "prev", NULL } } },/* Keybindings for Media play/pause/next/previous */
 	{ 0, XF86XK_AudioPlay,		spawn,		{.v = medplaypausecmd } },
+	{ MODKEY,             XK_p,      spawn,         {.v = medplaypausecmd } },
+	{ MODKEY,             XK_aring ,      spawn,         {.v = mednextcmd } },
+	{ MODKEY,             XK_o,      spawn,         {.v = medprevcmd } },
 	{ 0, XF86XK_AudioNext,		spawn,		{.v = mednextcmd } },
 	{ 0, XF86XK_AudioPrev,		spawn,		{.v = medprevcmd } },
 	// { 0, XF86XK_AudioMedia,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
