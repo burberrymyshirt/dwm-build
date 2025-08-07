@@ -119,7 +119,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox")},
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("screenshooter.sh")},
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("dm-tool lock")},
-	{ MODKEY, XK_i, spawn, SHCMD("toggle-keyboard.sh; kill -45 $(pidof dwmblocks)") },
+	{ MODKEY, XK_u, spawn, SHCMD("toggle-keyboard.sh; kill -45 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("light-locker-command -l")},
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -44 $(pidof dwmblocks)") },
