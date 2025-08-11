@@ -128,6 +128,7 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioPlay,		spawn,		{.v = medplaypausecmd } },
 	{ MODKEY,             XK_p,      spawn,         {.v = medplaypausecmd } },
 	{ MODKEY,             XK_aring ,      spawn,         {.v = mednextcmd } },
+	{ MODKEY,             XK_bracketleft ,      spawn,         {.v = mednextcmd } },
 	{ MODKEY,             XK_o,      spawn,         {.v = medprevcmd } },
 	{ 0, XF86XK_AudioNext,		spawn,		{.v = mednextcmd } },
 	{ 0, XF86XK_AudioPrev,		spawn,		{.v = medprevcmd } },
