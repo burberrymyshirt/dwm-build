@@ -126,7 +126,9 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		spawn,		{.v = (const char*[]){ "mpc", "prev", NULL } } },/* Keybindings for Media play/pause/next/previous */
 	{ 0, XF86XK_AudioPlay,		spawn,		{.v = medplaypausecmd } },
-	{ MODKEY,             XK_p,      spawn,         {.v = medplaypausecmd } },
+    { 0, XF86XK_MonBrightnessUp,   spawn, {.v = (const char*[]){ "xbacklight", "-inc", "10", NULL } } },
+    { 0, XF86XK_MonBrightnessDown, spawn, {.v = (const char*[]){ "xbacklight", "-dec", "10", NULL } } },
+    { MODKEY,             XK_p,      spawn,         {.v = medplaypausecmd } },
 	{ MODKEY,             XK_aring ,      spawn,         {.v = mednextcmd } },
 	{ MODKEY,             XK_bracketleft ,      spawn,         {.v = mednextcmd } },
 	{ MODKEY,             XK_o,      spawn,         {.v = medprevcmd } },
