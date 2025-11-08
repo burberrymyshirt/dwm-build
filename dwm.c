@@ -888,7 +888,7 @@ createmon(void)
 		m->pertag->ltidxs[i][1] = m->lt[1];
 		m->pertag->sellts[i] = m->sellt;
 
-		m->pertag->showbars[i] = m->showbar;
+		// m->pertag->showbars[i] = m->showbar;
 		if (i > 0) {
 			m->pertag->drawwithgaps[i] = startwithgaps[(i - 1) % LENGTH(gappx)];
 			m->pertag->gappx[i] = gappx[(i - 1) % LENGTH(gappx)];
@@ -2350,14 +2350,15 @@ tile(Monitor *m)
 void
 togglebar(const Arg *arg)
 {
-	selmon->showbar = selmon->pertag->showbars[selmon->pertag->curtag] = !selmon->showbar;
+	// selmon->showbar = selmon->pertag->showbars[selmon->pertag->curtag] = !selmon->showbar;
+	selmon->showbar = !selmon->showbar;
 	updatebarpos(selmon);
 	resizebarwin(selmon);
 	if (showsystray) {
 		XWindowChanges wc;
-		if (!selmon->showbar)
+		if (!selmon->showbar) {
 			wc.y = -bh;
-		else if (selmon->showbar) {
+        } else if (selmon->showbar) {
 			wc.y = 0;
 			if (!selmon->topbar)
 				wc.y = selmon->mh - bh;
@@ -2424,8 +2425,8 @@ toggleview(const Arg *arg)
 		selmon->lt[selmon->sellt] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt];
 		selmon->lt[selmon->sellt^1] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt^1];
 
-		if (selmon->showbar != selmon->pertag->showbars[selmon->pertag->curtag])
-			togglebar(NULL);
+		// if (selmon->showbar != selmon->pertag->showbars[selmon->pertag->curtag])
+		// 	togglebar(NULL);
 
 		focus(NULL);
 		arrange(selmon);
@@ -2899,8 +2900,8 @@ view(const Arg *arg)
 	selmon->lt[selmon->sellt] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt];
 	selmon->lt[selmon->sellt^1] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt^1];
 
-	if (selmon->showbar != selmon->pertag->showbars[selmon->pertag->curtag])
-		togglebar(NULL);
+	// if (selmon->showbar != selmon->pertag->showbars[selmon->pertag->curtag])
+	// 	togglebar(NULL);
 
 	focus(NULL);
 	arrange(selmon);
